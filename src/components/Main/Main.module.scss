@@ -1,0 +1,23 @@
+@import "../../style/vars";
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background: $grey-1;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__wrapper {
+    background: $grey-3;
+    border: 1px $grey-2 solid;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+
+  }
+
+}
