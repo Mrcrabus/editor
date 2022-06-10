@@ -1,11 +1,9 @@
 import React from 'react';
-import Main from "./components/Main/Main";
+import BaseRoutes from "./Routes/BaseRoutes";
 
 const App = () => {
   return (
-    <div>
-      <Main />
-    </div>
+    <BaseRoutes />
   );
 };
 

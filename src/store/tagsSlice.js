@@ -2,33 +2,61 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const tagsSlice = createSlice({
   name: 'tags',
-  initialState: [
-    {
+  initialState: {
+    tags: [{
       id: 0,
-      tag: 'lolkek',
+      tag: 'shop',
     }, {
       id: 1,
+      tag: 'school',
+    }, {
+      id: 2,
       tag: 'lolkek2',
-    }
-  ],
+    }],
+    notes: [
+      {
+        id: 0,
+        text: 'I wanna go to #shop',
+      }, {
+        id: 1,
+        text: 'I wanna go to #school',
+      }
+    ]
+  }
+  ,
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1
+    removeTag: (state, action) => {
+      state = {...state, tags: state.tags.filter(tag => tag.id != action.payload)}
+      return state
     },
-    decrement: (state) => {
-      state.value -= 1
+    addTag: (state, action) => {
+      state.tags.push({
+        id: Math.random() * 1000,
+        text: action.payload
+      })
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
+    
+    addNotes: (state, action) => {
+      state.notes.push({
+        id: Math.random() * 1000,
+        text: action.payload
+      })
+    },
+    changeNote: (state, action) => {
+      let {id, text} = action.payload;
+      state = {
+        ...state, notes: state.notes.map((el) => {
+          if(el.id == id) {
+            return {...el, text}
+          }
+          return el;
+        })
+      };
+      return state
     },
   },
 })
 
-// Action creators are generated for each case reducer function
-export const {increment, decrement, incrementByAmount} = tagsSlice.actions
+export const {addNotes, changeNote, removeTag} = tagsSlice.actions
 
 export default tagsSlice.reducer

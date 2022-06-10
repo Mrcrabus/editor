@@ -1,0 +1,19 @@
+@import "../../style/vars";
+
+.notes {
+
+  &__item {
+    color: $blue-3;
+    margin: 5px 0;
+    text-wrap: normal;
+    max-width: 390px;
+    min-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}

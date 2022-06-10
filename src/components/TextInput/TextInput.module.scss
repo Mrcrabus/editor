@@ -1,0 +1,27 @@
+@import "../../style/vars";
+
+.textInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__input {
+    background: $grey-7;
+    border: 1px solid $blue-3;
+    font-size: 16px;
+    width: 300px;
+    height: 30px;
+    border-radius: 3px;
+    color: $blue-3;
+    padding-left: 15px;
+
+    &::placeholder {
+      color: $grey-2;
+    }
+
+    &:focus {
+      outline: 1px solid black;
+    }
+  }
+}

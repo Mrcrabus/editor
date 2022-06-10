@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import styles from './TextInput.module.scss'
 
-const TextInput = () => {
-  const [text, setText] = useState('')
+const TextInput = ({text, setText, placeholder, defaultValue}) => {
   
   return (
     <input
+      className={ styles.textInput__input }
+      placeholder={ placeholder || "Enter your note" }
       type="text"
-      value={ text }
+      value={ text || "" }
       onChange={ e => setText(e.target.value) }
     />
   );

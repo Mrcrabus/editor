@@ -9,15 +9,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
 
   &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: start;
     background: $grey-3;
     border: 1px $grey-2 solid;
     padding: 30px;
     border-radius: 8px;
     margin-top: 50px;
+    min-width: 400px;
+
 
   }
+
+
 
 }

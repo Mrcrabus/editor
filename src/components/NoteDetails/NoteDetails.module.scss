@@ -1,0 +1,31 @@
+@import "../../style/vars";
+
+.noteDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__button {
+    margin-top: 15px;
+  }
+
+  &__home {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 120px;
+    overflow: hidden;
+
+
+    &:hover {
+      background: rgba(121, 131, 139, 0.2);
+      box-shadow: 0 0 8px 0 rgb(224, 233, 241) inset;
+    }
+
+    a {
+      padding-bottom: 100vh;
+    }
+  }
+}
