@@ -32,7 +32,7 @@ const tagsSlice = createSlice({
     addTag: (state, action) => {
       state.tags.push({
         id: Math.random() * 1000,
-        text: action.payload
+        tag: action.payload
       })
     },
     
@@ -57,6 +57,6 @@ const tagsSlice = createSlice({
   },
 })
 
-export const {addNotes, changeNote, removeTag} = tagsSlice.actions
+export const {addNotes, changeNote, removeTag, addTag} = tagsSlice.actions
 
 export default tagsSlice.reducer

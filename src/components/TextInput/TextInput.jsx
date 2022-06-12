@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TextInput.module.scss'
 
-const TextInput = ({text, setText, placeholder, defaultValue}) => {
+const TextInput = ({text, setText, placeholder}) => {
   
   return (
     <input

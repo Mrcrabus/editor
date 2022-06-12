@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 50px;
 
   &__wrapper {
     background: $grey-2;
@@ -21,7 +22,7 @@
   }
 
 
-  &__tag{
+  &__tag {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,15 +64,20 @@
     }
   }
 
+  &__input {
+    width: 120px;
+    margin-left: -10px;
+  }
 
-  &__item{
+
+  &__item {
     height: auto;
     margin: 0;
 
     cursor: pointer;
     padding: 5px 3px;
 
-    &:hover{
+    &:hover {
       color: $blue-1;
     }
 
