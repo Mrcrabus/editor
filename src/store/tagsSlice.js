@@ -1,13 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
+import state from "../index.json"
 
 const tagsSlice = createSlice({
   name: 'tags',
-  initialState: {
-    tags: [],
-    notes: [],
-    filteredNotes: [],
-  }
-  ,
+  initialState: state,
   reducers: {
     removeTag: (state, action) => {
       state = {...state, tags: state.tags.filter(tag => tag.id !== action.payload)}
