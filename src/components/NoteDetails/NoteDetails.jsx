@@ -23,14 +23,17 @@ const NoteDetails = () => {
   }
   
   const handleChangeNote = () => {
-    dispatch(changeNote({id: +params.noteId, text}))
+    if(text.length) {
+      dispatch(changeNote({id: +params.noteId, text}))
+    }
+    
     setEdit(false)
   }
   
   return (
     <>
-      <div className={styles.noteDetails__home}>
-        <Link to="/">{"<---"}Back home</Link>
+      <div className={ styles.noteDetails__home }>
+        <Link to="/">{ "<---" }Back home</Link>
       </div>
       <div className={ styles.noteDetails }>
         { isEdit ?

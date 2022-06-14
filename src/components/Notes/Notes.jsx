@@ -1,15 +1,21 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import styles from './Notes.module.scss'
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Note from "../Note/Note";
+import { removeNote } from "../../store/tagsSlice";
 
 const Notes = () => {
-  const notes = useSelector(state => state.tags.notes)
+  const notes = useSelector(state => state.tags.filteredNotes)
+  
+  const dispatch = useDispatch()
+  
+  const handleRemove = (id) => {
+    dispatch(removeNote(id))
+  }
   
   return (
-    <div className={ styles.notes }>
-      { notes.map(note =>
-        <p className={ styles.notes__item } key={ note.id }><Link to={ `/${ note.id }` }>{ note.text }</Link></p>
+    <div>
+      { notes.map((note, index) =>
+        <Note note={ note } index={ index } key={ note.id } onRemove={handleRemove}/>
       ) }
     </div>
   );

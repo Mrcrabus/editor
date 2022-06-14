@@ -1,0 +1,31 @@
+@import "../../style/vars";
+
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  color: $blue-3;
+  margin: 5px 0;
+  text-wrap: normal;
+  max-width: 390px;
+  min-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: auto;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  &__remove {
+    cursor: pointer;
+    margin-right: 2px;
+    background: rgb(218, 54, 51);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgb(183, 50, 47);
+    }
+  }
+}
